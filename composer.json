@@ -1,0 +1,26 @@
+{
+    "name": "marton/anax-lite",
+    "description": "A small PHP framework.",
+    "license": "MIT",
+    "authors": [
+            {
+                "name": "Mikael Roos",
+                "email": "mos@dbwebb.se"
+            },
+            {
+                "name": "Martin Fagerlund",
+                "email": "mngfagerlund@gmail.com"
+            }
+    ],
+    "require": {
+        "anax/request": "^1.0",
+        "anax/url": "^1.0",
+        "anax/router": "^1.0",
+        "anax/response": "^1.0",
+        "anax/view": "^1.0",
+        "mos/cimage": "^0.7.19"
+    },
+    "autoload": {
+        "psr-4": {"Marton\\": "src/"}
+    }
+}
