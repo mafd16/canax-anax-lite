@@ -2,7 +2,7 @@
 $urlStatus = $app->url->create("status");
 ?>
 
-
+</div>
 
 <h1>Om</h1>
 <p>Detta är min Me-sida i kursen OOPHP, som ges på distans vid BTH. I kursen

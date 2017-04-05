@@ -15,7 +15,7 @@ $intRoutes .= "</ul>";
 
 ?>
 
-
+</div>
 <h1>404 Not Found</h1>
 <p>The route '<?= $currentRoute ?>' could not be found!</p>
 <h2>Routes loaded</h2>

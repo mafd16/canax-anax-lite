@@ -1,3 +1,4 @@
+</div>
 <div class="starter-template">
     <h1>Hem</h1>
     <p class="lead">Hej! Jag heter Martin Fagerlund. Jag läser programmet

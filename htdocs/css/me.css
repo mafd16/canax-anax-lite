@@ -1,12 +1,18 @@
 
 body {
-    margin: 0;
     padding: 0;
     background-color: lavender;
+    max-width: 800px;
+    margin: auto;
 }
 
 .center {
     text-align: center;
+}
+
+.current {
+    background-color: lavender;
+    color: black;
 }
 
 footer {
@@ -16,7 +22,36 @@ footer {
 
 .header {
     background-color: lightblue;
-    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.navbar li a {
+    display: block;
+    padding: 8px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar li a:hover {
+    background-color: lavender;
+    /*text-decoration: none;*/
+}
+
+.navbar li {
+    /*width: 150px;*/
+    float: left;
+
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .starter-template {
