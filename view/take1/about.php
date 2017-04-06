@@ -1,5 +1,6 @@
 <?php
 $urlStatus = $app->url->create("status");
+$guess = $app->url->create("../../kmom01/guess/index");
 ?>
 
 </div>
@@ -19,3 +20,4 @@ $urlStatus = $app->url->create("status");
 <br>
 
 <p>Detaljer om systemet finner du <a href="<?= $urlStatus ?>">här!</a></p>
+<p>Spela <a href="<?= $guess ?>">guess my number</a>.</p>
