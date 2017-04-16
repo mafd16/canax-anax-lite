@@ -15,11 +15,25 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 
 // Add all resources to $app
 $app = new \Marton\App\App();
+$app->navbar   = new \Marton\Navbar\Navbar();
+$app->session  = new \Marton\Session\Session('martintestsession');
 $app->request  = new \Anax\Request\Request();
 $app->response = new \Anax\Response\Response();
 $app->url      = new \Anax\Url\Url();
 $app->router   = new \Anax\Route\RouterInjectable();
 $app->view     = new \Anax\View\ViewContainer();
+
+// Update navbar configuration with values from config file.
+$app->navbar->configure("navbar.php");
+
+// Let navbar get current route
+//$app->navbar->setCurrentRoute($app->request->getRoute());
+
+// Let navbar be able to create links
+//$app->navbar->setUrlCreator([$app->url, "create"]);
+
+// Inject $app into the navbar for use.
+$app->navbar->setApp($app);
 
 // Inject $app into the view container for use in view files.
 $app->view->setApp($app);

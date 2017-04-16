@@ -54,6 +54,10 @@ footer {
     overflow: hidden;
 }
 
+.showsession {
+    min-height: 300px;
+}
+
 .starter-template {
     padding: 5px;
 }
