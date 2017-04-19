@@ -49,7 +49,64 @@ underliggande sql-satserna. </p>
 
 
 <h2>Kmom02</h2>
-<p>Text</p>
+
+
+<h4>Hur känns det att skriva kod utanför och inuti ramverket, ser du
+fördelar och nackdelar med de olika sätten?</h4>
+<p>När det gäller kod som kan komma att återanvändas flera gånger så känns det
+rätt att skriva det i ramverket, som t.ex. navbaren. Den hade jag nog kunnat
+använda igen i session-uppgiften. Med en vettig dokumentation så kan jag tycka
+att det är en fördel att lägga kod i ramverket. Bara det inte blir alldeles
+för specifika saker som man bygger in. </p>
+
+<h4>Hur väljer du att organisera dina vyer?</h4>
+<p>Hittills har jag lagt de två navbar-vyerna i navbar1 och navbar2, och så har
+jag de andra vyerna i mappen take1. Med så här pass få vyer tycker jag det
+går alldeles utmärkt att ha dom i en mapp, men om sidan skulle växa sig
+mycket större så skulle jag nog dela upp dom i egna mappar. </p>
+
+<h4>Berätta om hur du löste integreringen av klassen Session.</h4>
+<p>Jag skapade klassen Session i mappen src/Session, och initierade den i
+index.php. Jag skapade bara en view-fil, session.php i mappen view/take1.
+I view-filen sätter jag key/value-paret 'count' => 0, om det inte redan finns
+i sessionen. Sen skapar jag länkarna till de olika routerna, som jag skriver
+ut i html. Jag skriver också ut 'Current value'. I config/route/session.php la
+jag till de router som behövdes, och utförde respektive operationer,
+exempelvis increment. Efter det använde jag mig av funktionen redirect (eller
+sendJson), som fanns i modulen vendor/anax/response, och redirectade tillbaka
+till view-filen session.php. Det känns helt klart bra att bara skapa en
+view-fil för att lösa uppgiften. </p>
+
+<h4>Berätta om hur du löste uppgiften med Tärningsspelet 100, hur du tänkte,
+planerade och utförde uppgiften samt hur du organiserade din kod?</h4>
+<p>Till att börja med så missade jag att bara en spelare skulle spela själv,
+utan jag gjorde från början att man spelar två spelare mot varandra. Vidare så
+tyckte jag det verkade rörigt med 3 klasser som skulle samverka, och jag såg
+inte framför mig hur det skulle fungera. Jag skapade därför en klass i
+src/Dice/Dice.php. I den skapade jag privata variabler för spelarnas totala
+summa, vems tur det är, tillfällig summa och resultat av senaste kastet. De
+metoder som finns i klassen är t.ex. throwDice, changePlayer, showPlayerInTurn,
+showTotalScore, stopAndSave, och några till.
+
+I min view-fil (view/take1/dice.php) så startar jag en session skild från
+sessionen i sessions-uppgiften. Om mitt dice-objekt finns sparat i sessionen
+så använder jag det, annars så initierar jag ett nytt dice-objekt. Länkarna
+på sidan skickar ett värde med GET, och jag fångar upp värdena och utför
+de operationer som spelaren har klickat. I php-koden kollar jag även efter
+om en etta har slagits, eller om någon har nått 100. Jag sparar mitt uppdaterade
+dice-objekt i sessionen. Jag valde även att göra en alert-popup om en etta slås,
+så att en spelare av bara farten inte spelar på den andra spelarens tur. Jag
+la även till info-meddelanden. </p>
+
+
+<h4>Några tankar kring SQL så här långt?</h4>
+<p>Jag tycker det känns ganska så enkelt och logiskt. Som nybörjare får man ju
+läsa en del i manualen och testa sig fram, men det funkar fint. Jag gjorde nu
+från och med uppgift 6 till och med uppgift 10. </p>
+
+
+
+
 
 <h2>Kmom03</h2>
 <p>Text</p>

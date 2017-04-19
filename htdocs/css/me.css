@@ -61,3 +61,60 @@ footer {
 .starter-template {
     padding: 5px;
 }
+
+
+/* ----- DICE GAME BELOW ----- */
+
+.diceheading {
+    margin-left: 10px;
+}
+
+.totalscore {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    width: 35%;
+    min-height: 162px;
+    float: left;
+    /*display: inline-block;*/
+}
+
+.diceroom {
+    width: 4%;
+    display: inline-block;
+
+}
+
+.dicegame {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    width: 35%;
+    display: inline-block;
+}
+
+.dicemessages {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 15px;
+    margin: 10px;
+    width: 75%;
+}
+
+.dicerules {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 15px;
+    margin: 10px;
+    width: 75%;
+}
+
+.restartdice {
+    margin-left: 10px;
+}
+
+/* ----- DICE GAME ABOVE ----- */

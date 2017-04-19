@@ -50,6 +50,18 @@ $app->router->add("status", function () use ($app) {
     $app->response->sendJson($data);
 });
 
+
+$app->router->add("dice", function () use ($app) {
+    $app->view->add("take1/header", ["title" => "dice"]);
+    //$app->view->add("navbar1/navbar");
+    $app->view->add("navbar2/navbar2");
+    $app->view->add("take1/dice");
+    $app->view->add("take1/footer");
+
+    $app->response->setBody([$app->view, "render"])
+                  ->send();
+});
+
 /*
 $app->router->add("search/{string}", function ($string) {
     echo "Searchstring was";
