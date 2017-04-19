@@ -1,70 +1,65 @@
 <?php
-    $app->diceSession  = new \Marton\Session\Session('martindice');
-    $app->diceSession->start();
+$app->diceSession  = new \Marton\Session\Session('martindice');
+$app->diceSession->start();
 
-    if ($app->diceSession->has('diceobj')) {
-        $dice = $app->diceSession->get('diceobj');
+if ($app->diceSession->has('diceobj')) {
+    $dice = $app->diceSession->get('diceobj');
+} else {
+    $dice = new \Marton\Dice\Dice();
+}
+
+// Restart the game
+if (isset($_GET['restart'])) {
+    $app->diceSession->destroy();
+    unset($GLOBALS['restart']);
+    $app->response->redirect($app->url->create("dice"));
+}
+
+// Zero messages
+$message = "";
+
+// Links
+$rollDice = $app->url->create("dice?roll=true");
+$save = $app->url->create("dice?save=true");
+$restart = $app->url->create("dice?restart=true");
+
+// Roll the dice:
+if (isset($_GET['roll'])) {
+    $dice->throwDice();
+    if ($dice->showLastRoll() == 1) {
+        $dice->zeroCurrentSum();
+        //$dice->zeroLastRoll();
+        $dice->changePlayer();
+        $message = "You rolled a 1. Next players turn!";
+        //echo "<script type='text/javascript'>alert('$message');</script>";
     } else {
-        $dice = new \Marton\Dice\Dice();
+        $dice->addToCurrentSum($dice->showLastRoll());
+        $message = "";
+        //$message = "Good roll! Keep playing, or save your points.";
     }
+    unset($GLOBALS['roll']);
+}
 
-    // Restart the game
-    if (isset($_GET['restart'])) {
-        $app->diceSession->destroy();
-        unset($GLOBALS['restart']);
-        $app->response->redirect($app->url->create("dice"));
+// Save current round
+if (isset($_GET['save'])) {
+    unset($GLOBALS['save']);
+    $dice->stopAndSave(); // move curr sum to player // currSum -> 0
+    $dice->zeroLastRoll(); // LastRoll -> 0
+    if ($dice->showTotalScore($dice->showPlayerInTurn()) >= 100) {
+        $message = "Player ";
+        $message .= $dice->showPlayerInTurn();
+        $message .= " is the winner!";
+        $rollDice = "";
+        $save = "";
+    } else {
+        $dice->changePlayer(); // Change player
+        $message = "Points saved! Next players turn!";
     }
-
-    // Zero messages
-    $message = "";
-
-    // Links
-    $rollDice = $app->url->create("dice?roll=true");
-    $save = $app->url->create("dice?save=true");
-    $restart = $app->url->create("dice?restart=true");
-
-    // Roll the dice:
-    if (isset($_GET['roll'])) {
-        $dice->throwDice();
-        if ($dice->showLastRoll() == 1) {
-            $dice->zeroCurrentSum();
-            //$dice->zeroLastRoll();
-            $dice->changePlayer();
-            $message = "You rolled a 1. Next players turn!";
-            //echo "<script type='text/javascript'>alert('$message');</script>";
-        } else {
-            $dice->addToCurrentSum($dice->showLastRoll());
-            $message = "";
-            //$message = "Good roll! Keep playing, or save your points.";
-        }
-        unset($GLOBALS['roll']);
-    }
-
-    // Save current round
-    if (isset($_GET['save'])) {
-        unset($GLOBALS['save']);
-        $dice->stopAndSave(); // move curr sum to player // currSum -> 0
-        $dice->zeroLastRoll(); // LastRoll -> 0
-        if ($dice->showTotalScore($dice->showPlayerInTurn()) >= 100) {
-
-            $message = "Player ";
-            $message .= $dice->showPlayerInTurn();
-            $message .= " is the winner!";
-            $rollDice = "";
-            $save = "";
-        } else {
-            $dice->changePlayer(); // Change player
-            $message = "Points saved! Next players turn!";
-        }
-    }
-
-    // Check for a winner!
+}
 
 
-
-
-    // Save the diceobject to the diceSession
-    $app->diceSession->set('diceobj', $dice);
+// Save the diceobject to the diceSession
+$app->diceSession->set('diceobj', $dice);
 ?>
 
 </div>
