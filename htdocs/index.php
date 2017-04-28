@@ -1,5 +1,9 @@
 <?php //echo "I wanna be a frontcontroller!";
 
+require "../src/Database/Database.php";
+require "../src/Database/function.php";
+
+
 /**
  * Bootstrap the framework.
  */
@@ -15,6 +19,7 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 
 // Add all resources to $app
 $app = new \Marton\App\App();
+$app->database = new Database();
 $app->navbar   = new \Marton\Navbar\Navbar();
 $app->session  = new \Marton\Session\Session('martintestsession');
 $app->request  = new \Anax\Request\Request();
@@ -22,6 +27,10 @@ $app->response = new \Anax\Response\Response();
 $app->url      = new \Anax\Url\Url();
 $app->router   = new \Anax\Route\RouterInjectable();
 $app->view     = new \Anax\View\ViewContainer();
+
+// Create db-connection
+//$db = new Database();
+//$db->connect($databaseConfig);
 
 // Update navbar configuration with values from config file.
 $app->navbar->configure("navbar.php");

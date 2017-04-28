@@ -26,6 +26,10 @@ return [
         "dice" => [
             "text" => "Tärning",
             "route" => "dice"
+        ],
+        "profile" => [
+            "text" => "Profil",
+            "route" => "profile"
         ]
     ]
 ];

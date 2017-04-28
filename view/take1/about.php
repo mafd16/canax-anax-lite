@@ -3,7 +3,6 @@ $urlStatus = $app->url->create("status");
 $guess = $app->url->create("../../kmom01/guess/index");
 ?>
 
-</div>
 
 <h1>Om</h1>
 <p>Detta är min Me-sida i kursen OOPHP, som ges på distans vid BTH. I kursen

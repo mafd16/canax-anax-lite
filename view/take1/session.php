@@ -19,7 +19,6 @@ $destroy = $app->url->create("session/destroy");
 
 ?>
 
-</div>
 
 
 <div class="showsession">

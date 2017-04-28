@@ -31,7 +31,9 @@ class Navbar implements
             $navbar .= $this->app->url->create($value['route']);
             $navbar .= '">' . $value['text'] . '</a></li>';
         }
-        $navbar .= '</ul></navbar>';
+        //$navbar .= '</ul></navbar></div>';
+        $navbar .= '</ul>';
+        $navbar .= '</navbar></div>';
 
         return $navbar;
     }

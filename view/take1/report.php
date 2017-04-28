@@ -2,7 +2,6 @@
 $guess = $app->url->create("../../kmom01/guess/index");
 ?>
 
-</div>
 
 <h1>Redovisning</h1>
 <p>Här kan du läsa mina redovisningar från de olika vecko-momenten.</p>
@@ -109,7 +108,63 @@ från och med uppgift 6 till och med uppgift 10. </p>
 
 
 <h2>Kmom03</h2>
-<p>Text</p>
+
+
+<h4>Hur kändes det att jobba med PHP PDO, SQL och MySQL?</h4>
+<p>PHP PDO funkade okej. Tyvärr blev koden lite icke-enhetlig, då jag både drog
+nytta av mos artikel och av lews artikel, då dom kodar lite olika. Det blir väl
+lätt så när man utgår från någon annans kod. Jag hade också ett problem med
+teckenkodning som jag inte fick ordning på. När jag skapar användare med åäö
+i användarnamnet så blir det fel i databasen, vilket får följdfel att det blir
+fel vid sökning av användare och vid radering av användare. Teckenkodningen
+blir dock rätt i mina andra kolumner, vilket kändes konstigt. Jag fick inte
+ordning på det iaf.</p>
+
+<p>SQL känns kul och logiskt att jobba med. Där fick vi ju även se att det går
+att höja svårighetsgraden avsevärt. Övningarna kändes dock som en bra
+introduktion. För admin-gränssnitts-övningen hade det varit bra om det hade
+varit länkat till artikeln som beskriver BTHs sql-databas-server och hur man får
+tillgång till den. </p>
+
+<h4>Reflektera kring koden du skrev för att lösa uppgifterna, klasser,
+formulär, integration Anax Lite?</h4>
+<p>Min första reflektion är att jag inte känner mig helt klar över hur jag borde
+koda lösningarna, eller rättare sagt vad som anses som en bra lösning. Det kanske
+iofs inte är det viktiga här, bara det fungerar tillfredsställande. För
+uppgifterna använde jag sessionsklassen från tidigare uppgift, och skapade en
+ny databasklass. Alla vyer la jag i en egen mapp, view/login. Min kod kanske
+inte är så DRY som den skulle kunna vara, men i vissa fall är det ett medvetet
+val. T.ex. redigera/radera användare, där vill jag hålla isär funktionaliteten helt
+och hållet. Jag tycker inte om när det ligger en redigera-knapp och en
+radera-knapp precis intill varandra. En radera-funktion tycker jag ska ligga på
+en helt egen sida, som tydligt särskiljer sig från andra sidor. Formulären gick
+fint att skapa, men i vissa vyer blev det lite mycket kod. Det var dock inga
+större svårigheter att hålla ordning. Databasklassen integrerade jag som en del
+i $app, men sessionen gjorde jag så den bara nås under Profil-fliken. Jag lyckades
+inte få in den i $app, och det verkade som att den på något vis krockade med
+sessionen i Session-fliken. Att starta 3 sessioner på en hemsida kanske heller
+inte är optimalt. </p>
+
+<h4>Känner du dig hemma i ramverket, dess komponenter och struktur?</h4>
+<p>Nja, inte helt. Det känns som att jag famlar lite i mörkret, och det jag lär
+mig är det som jag stöter på under uppgifternas gång. Det som jag saknar är en
+mer teoretisk förklaring av ett ramverk, och dess ingående delar. Kanske kan vara
+något för kurslitteraturen i framtida versioner av kursen? Sen så kanske det inte
+är så enkelt, det finns ju olika ramverk, och kanske även olika teorier om vad
+som är ett ramverk, eller vad som bör ingå. </p>
+
+<h4>Hur bedömmer du svårighetsgraden på kursens inledande kursmoment, känner
+du att du lär dig något/bra saker?</h4>
+<p>Svårighetsgraden tycker jag är på en lagom nivå. Däremot så har kursmomenten
+kännts väldigt stora, eller åtminstone så tycker jag att dom tar längre tid att
+genomföra jämfört med tidigare kurser. Jag tycker jag lär mig mycket, men ibland
+kan det vara svårt att se under pågående kurs, då allt är nytt och man känner sig
+överröst med ny information. När man väl avslutat kursen, och senare återgår
+till ämnet så bruker man se klarare på sakerna. Jag förväntar mig samma sak för
+denna kursen. </p>
+
+
+
 
 <h2>Kmom04</h2>
 <p>Text</p>
