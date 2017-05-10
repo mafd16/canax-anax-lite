@@ -2,6 +2,7 @@
 
 require "../src/Database/Database.php";
 require "../src/Database/function.php";
+//use Michelf\Markdown;
 
 
 /**
@@ -19,14 +20,16 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 
 // Add all resources to $app
 $app = new \Marton\App\App();
-$app->database = new Database();
-$app->navbar   = new \Marton\Navbar\Navbar();
-$app->session  = new \Marton\Session\Session('martintestsession');
-$app->request  = new \Anax\Request\Request();
-$app->response = new \Anax\Response\Response();
-$app->url      = new \Anax\Url\Url();
-$app->router   = new \Anax\Route\RouterInjectable();
-$app->view     = new \Anax\View\ViewContainer();
+//$app->markdown   = new \Michelf\Markdown();
+$app->textfilter = new \Marton\Textfilter\Textfilter();
+$app->database   = new Database();
+$app->navbar     = new \Marton\Navbar\Navbar();
+$app->session    = new \Marton\Session\Session('martintestsession');
+$app->request    = new \Anax\Request\Request();
+$app->response   = new \Anax\Response\Response();
+$app->url        = new \Anax\Url\Url();
+$app->router     = new \Anax\Route\RouterInjectable();
+$app->view       = new \Anax\View\ViewContainer();
 
 // Create db-connection
 //$db = new Database();

@@ -11,9 +11,9 @@
  * Details for connecting to the database.
  */
 $databaseConfig = [
-    "dsn"      => "mysql:host=localhost;dbname=melogin;",
-    "login"    => "user",
-    "password" => "pass",
+    //"dsn"      => "mysql:host=localhost;dbname=melogin;",
+    //"login"    => "user",
+    //"password" => "pass",
     "options"  => [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"],
 ];
 

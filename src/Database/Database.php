@@ -35,6 +35,16 @@ class Database
 
 
     /**
+     * Get the id from the last inserted entry
+     * @return $lastId Int The id.
+     */
+    public function lastInsertId()
+    {
+        $lastId = $this->db->lastInsertId();
+        return $lastId;
+    }
+
+    /**
      * Get the info about the user
      * @param $user string The username of the user to get info about.
      * @return $res array The info about the user.
@@ -103,6 +113,25 @@ class Database
         $res = $stmt->fetchAll();
         return $res;
     }
+
+
+
+    /**
+     * Do SELECT with optional parameters and return the first row.
+     *
+     * @param string $sql   statement to execute
+     * @param array  $param to match ? in statement
+     *
+     * @return array with first row as resultset
+     */
+    public function executeFetch($sql, $param = [])
+    {
+        $sth = $this->execute($sql, $param);
+        $res = $sth->fetch();
+        return $res;
+    }
+
+
 
     /**
      * Do SELECT with optional parameters and return a resultset.
@@ -186,7 +215,7 @@ class Database
     }
 
     /**
-     * Through exception with detailed message.
+     * Throw exception with detailed message.
      *
      * @param PDOStatement $sth statement with error
      * @param string       $sql     statement to execute
@@ -196,7 +225,7 @@ class Database
      *
      * @throws Exception
      */
-    public function statementException($sth, $sql, $param)
+    private function statementException($sth, $sql, $param)
     {
         throw new Exception(
             $sth->errorInfo()[2]

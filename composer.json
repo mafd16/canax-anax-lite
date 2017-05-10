@@ -18,7 +18,9 @@
         "anax/router": "^1.0",
         "anax/response": "^1.0",
         "anax/view": "^1.0",
-        "mos/cimage": "^0.7.19"
+        "mos/cimage": "^0.7.19",
+        "michelf/php-markdown": "^1.7",
+        "michelf/php-smartypants": "^1.8"
     },
     "autoload": {
         "psr-4": {"Marton\\": "src/"}

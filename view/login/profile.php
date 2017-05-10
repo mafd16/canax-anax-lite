@@ -82,6 +82,8 @@ if ($session->get("admin")) {
     echo " <a href='admin'>Administrera</a>";
 }
 
+echo " <a href='content'>Hantera innehåll</a>";
+
 echo "</p>";
 
 //echo "<div class='profilepicture'><img src='img/hitchcock.jpg'></div>";
