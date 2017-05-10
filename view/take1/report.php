@@ -167,7 +167,61 @@ denna kursen. </p>
 
 
 <h2>Kmom04</h2>
-<p>Text</p>
+<p></p>
+
+<h4>Finns något att säga kring din klass för textfilter, eller rent allmänt om
+formattering och filtrering av text som sparas i databasen av användaren?</h4>
+<p>Jag valde att inte integrera mos färdiga modul, utan istället skrev jag
+själv. Sen har jag ändå återanvänt mycket kod. Tycker det ger en större
+förståelse om man ändå skriver själv. bbcode-funktionen skulle man såklart
+kunna utveckla till att innehålla mycket mer, men nu har man iaf en grund att
+stå på. Att integrera Michelf\markdown gav mig problem med phpmd, som klagade
+på att jag använde en annan klass i min klass. Eftersom det ändå var
+en del av uppgiften så har jag bara tystat den varningen. </p>
+
+<h4>Berätta hur du tänkte när du strukturerade klasserna och databasen för
+webbsidor och bloggposter?</h4>
+<p>Jag skapade inga klasser för detta ändamålet som det tipsades om i
+uppgiften. Jag har i stort följt beskrivningen i artikeln, och jobbat mot min
+befintliga databas-klass. Databasen/tabellen är också uppbyggd enligt tabellen.
+Däremot fick jag problem när jag gick över till bth´s sql-server, och min
+update-kolumn fungerade inte som lokalt. Jag gjorde därför en lösning med att
+inte använda mig av created-kolumnen på samma sätt som kanske var tänkt. </p>
+
+<p>Mina vyer för detta kmom la jag i en egen mapp som heter blog. Alla vyer
+där man kan utföra crud-operationer är skyddade av inloggning. Både admin och
+vanliga användare kan uföra crud-operationerna. Från profil-sidan når man aktuella
+sidor via länken 'Hantera innehåll'.  </p>
+
+<h4>Förklara vilka routes som används för att demonstrera funktionaliteten
+för webbsidor och blogg (så att en utomstående kan testa).</h4>
+<p>För att se sidor av typen 'page' går man till /pages. Där får man en
+översikt av de sidor som finns. Man kan därifrån klicka sig vidare till respektive
+sida. Jag valde där att inte använda mig av path i länken, då det är ett krav
+att path ska kunna vara tom. Därför använder jag mig av id i länken för att
+komma till rätt sida. För att se bloggen används routen /blog. På den sidan, där
+alla inlägg visas i kronologisk ordning, så klippte jag innehållet efter 100
+tecken. Man kan där klicka sig vidare för att läsa respektive inlägg. Här har
+jag använt mig av slug i länken. För att se block, använd /block. För att se
+testrouten som visar formattering, använd /format. </p>
+
+<h4>Hur känns det att dokumentera databasen så här i efterhand?</h4>
+<p>Lite konstigt. Det känns som att man vill tänka till innan och göra en plan
+för hur den ska se ut. Sen kan det ju alltid bli förändringar på vägen, så på
+så sätt är ju detta ett väldigt smidigt sätt att kunna tillgå. </p>
+
+<h4>Om du är självkritisk till koden du skriver i Anax Lite, ser du
+förbättringspotential och möjligheter till alternativ struktur av din kod?</h4>
+<p>Nja, vet inte riktigt. Jag tycker nog strukturen på koden i stort är okej, men
+visst, det går förbättra säkert en massa saker. Något som jag däremot inte tycker
+har blivit bra, är strukturen på själva me-sidan. Eftersom det byggs på mer och
+mer sidor och funktionalitet för varje kmom så tycker jag inte att det är någon
+vettig ordning/struktur. Det är nog lättare att rita upp hur man vill att det
+ska se ut, om man har hela bilden klar för sig. Det skulle ju visserligen gå
+att ändra i efterhand, men jag lämnar det till en senare övning i så fall. </p>
+
+
+
 
 <h2>Kmom05</h2>
 <p>Text</p>
