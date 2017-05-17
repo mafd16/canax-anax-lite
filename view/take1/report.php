@@ -224,7 +224,72 @@ att ändra i efterhand, men jag lämnar det till en senare övning i så fall. <
 
 
 <h2>Kmom05</h2>
-<p>Text</p>
+
+<h4>Gick det bra att komma igång med det vi kallar programmering av databas,
+med transaktioner, lagrade procedurer, triggers, funktioner?</h4>
+<p>Ja, det tycker jag. Visst får man traggla lite när man lär sig nytt, men
+i det stora hela så tycker jag att det har gått bra. Jag valde att utgå från
+sql-koden vi fick i exemplet, och byggde vidare på den. </p>
+<p>Jag använde en hel del lagrade procedurer t.ex. för att ta bort order, visa
+order och skapa order. Inbyggd funktion hade jag svårt att se något naturligt ställe
+att utnyttja på, men jag skapade en funktion som anger hur många produkter som ska
+beställas, utifrån vilket kvartal det blir tomt på lagret. Trigger använder jag en,
+när det blir lågt med items på lagret. </p>
+<p>Transaktioner använder jag på några ställen,
+t.ex. när kund tar en produkt från lagret och lägger i varukorgen. Här har jag
+frångått kravet om att produkten ska flyttas från lager till order. Jag anser att
+rätt kundbemötande är att produkten flyttas, eller åtminstone reserveras, när den
+läggs i varukorgen. Tänk dig själv om du är på matbutiken, och när du kommer till
+kassan så säger expediten att någon annan var snabbare, och säljer ditt mjölkpaket
+till personen framför dig i kassan. Snopet! Jag tycker ändå att jag uppfyller
+meningen med kravet, att vi ska flytta en produkt från lagret, och lägga den
+någon annanstans, i en transaktion. Mitt flöde ställer dock andra krav, t.ex.
+att produkten måste läggas tillbaka i lagret om kunden lämnar sidan med produkter
+i varukorgen. Det känns dock som att det problemet ligger utanför denna
+uppgift. </p>
+<p>Som produkter har jag pennor, och mitt gränssnitt gick skapligt enkelt att
+bygga, då jag kunde återanvända mycket kod från tidigare kmom. </p>
+
+<h4>Hur är din syn på att programmera på detta viset i databasen?</h4>
+<p>Programmering på detta viset i databasen känns väldigt nytt för mig. Men jag
+tycker det känns smart och ibland logiskt. Jag tänker mig att många olika sorters
+klienter, t.ex. kund, kundservice, lagerarbetare, kan ofta använda samma metoder/api.
+Det bör förenkla och snabba upp byggandet av allt som ett företag skulle tänkas
+behöva.</p>
+
+<h4>Några reflektioner kring din kod för backenden till webbshopen</h4>
+<p>Jag tänker att man måste fundera både en och två gånger på struktur och flöden.
+Ett exempel, som kanske kan synas som ett misstag eller fel, har jag stött på
+medans jag kodat. Jag kan lägga samma produkt, ex. flera lådor med samma
+produkter, på olika hyllor i lagret. Får då webbshopen rätt lagerstatus? Vad
+händer när en produkt läggs tillbaka på lagret? Vilken hylla hamnar den på? Så
+reflektionen är att det känns smart att tänka till innan man bygger.</p>
+
+<h4>Något du vill säga om koden generellt i och kring Anax Lite?</h4>
+<p>Svår fråga! Även om vi lär oss en massa under kursens gång, så känner jag
+ändå en viss osäkerhet kring ramverket. Jag har inte översikts-bilden klar
+för mig. Jag tycker att en teoretisk framläggning av ett ramverk och dess
+eventuella delar skulle vara en bra ide för kursen, speciellt med tanke på att
+det har varit ganska så knapert med kurslitteratur. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2>Kmom06</h2>
 <p>Text</p>

@@ -6,8 +6,8 @@
 -- GRANT ALL ON oophp.* TO user@localhost IDENTIFIED BY "pass";
 -- USE oophp;
 
-USE melogin;
--- USE mafd16;
+-- USE melogin;
+USE mafd16;
 
 SET NAMES utf8;
 
