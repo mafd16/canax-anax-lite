@@ -168,7 +168,8 @@ footer {
 
 input[type=text],
 input[type=datetime],
-textarea {
+textarea,
+select {
     width: 400px;
 }
 
@@ -182,7 +183,8 @@ label {
 
 input,
 textarea,
-legend {
+legend,
+select {
     font-size: large;
 }
 
@@ -220,6 +222,11 @@ legend {
 
 .smallfont {
     font-size: small;
+}
+
+.webshoptd {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 

@@ -30,6 +30,10 @@ return [
         "profile" => [
             "text" => "Profil",
             "route" => "profile"
+        ],
+        "webshop" => [
+            "text" => "Webshop",
+            "route" => "webshop"
         ]
     ]
 ];
