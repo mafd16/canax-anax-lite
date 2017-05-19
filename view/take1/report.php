@@ -277,22 +277,70 @@ det har varit ganska så knapert med kurslitteratur. </p>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2>Kmom06</h2>
-<p>Text</p>
+
+<!--Jag började söka i min sql-kod efter kolumner som kunde indexeras. Det var dock
+ganska så svårt att finna något som inte redan nyttjade t.ex. id. Till slut fann
+jag i tabellen users, kolumn name. Den söker vi i på adminsidan, och här gick
+det att förbättra från full table scan till en rad. Jag fann även i tabellen
+content kolumnerna type och deleted. Även här gick det att förbättra resultatet
+från full table scan till en rad. Dock bara, som det verkar, om t.ex. sökning
+görs på type på ett värde som är unikt i kolumnen. -->
+
+
+
+<h4>Vad du bekant med begreppet index i databaser sedan tidigare?</h4>
+<p>Nej, det är helt nytt för mig. Man blir lite nyfiken på hur det fungerar,
+rent programmeringsmässigt. Eller kanske mer algoritm-mässigt. Tror faktiskt
+jag måste läsa på lite någon dag. </p>
+
+<h4>Berätta om hur du jobbade i uppgiften om index och vilka du valde att
+lägga till och skillnaden före/efter.</h4>
+<p>Jag började söka i min sql-kod efter kolumner som kunde indexeras. Det var dock
+ganska så svårt att finna något som inte redan nyttjade t.ex. id. Till slut fann
+jag i tabellen users, kolumn name. Den söker vi i på adminsidan, och här gick
+det att förbättra från full table scan till en rad. Jag fann även i tabellen
+content kolumnerna type och deleted. Även här gick det att förbättra resultatet
+från full table scan till en rad. Dock bara, som det verkar, om t.ex. sökning
+görs på type på ett värde som är unikt i kolumnen.</p>
+
+<h4>Har du tidigare erfarenheter av att skriva kod som testar annan kod?</h4>
+<p>Bara det som vi stött på i tidigare kurser här på programmet. När jag till
+slut väl fick ordning på test-miljön så gick det skapligt enkelt att skriva
+testerna. Det var kul också att se sin code coverage, och att se hur man
+förbättrades för varje test man skrev. </p>
+
+<h4>Hur ser du på begreppet enhetstestning och att skriva testbar kod?</h4>
+<p>Det beror lite på sammanhanget, men överlag tycker jag att det verkar vettigt.
+Om man har kod som är, eller ska bli, väldigt stor, eller om man har kod som
+kommer utsättas för förändring över tid, så känns det extremt nyttigt med tester.
+Sen gäller det väl att hitta bra testfall. Det tror jag kan vara svårt. </p>
+
+<h4>Hur gick det att hitta testbar kod bland dina klasser i Anax Lite?</h4>
+<p>Det var lite svårt. Min Dice-klass kändes enklast att jobba med, så jag gav
+mig på den. Jag fick efter ganska lite arbete ihop 100% på code coverage, vilket
+är kul! Annars hade jag mest problem med att få till test-miljön. Jag hade en
+gammal version av phpunit som följde med xampp. När jag installerade ny version
+av phpunit, så krånglade det, och jag fick experimentera lite med .bat-ändelse
+på en fil. Fick då även ändra i make-filen. Sen fick jag felet att 'class
+PHPUnit_Framework_TestCase not found'. Fick lägga till
+'require_once phpunit/autoload.php'. Då 'funkade' phpunit, men inga tester kördes.
+Ändrade då i class-definitionen 'extends \phpunit_framework_testcase' till
+'extends \phpunit\framework\testcase'. Sökmotorer är bra ibland! </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2>Kmom10</h2>
 <p>Text</p>

@@ -1,8 +1,12 @@
 
-CREATE DATABASE IF NOT EXISTS melogin;
-GRANT ALL ON melogin.* TO user@localhost IDENTIFIED BY "pass";
+-- CREATE DATABASE IF NOT EXISTS melogin;
+-- GRANT ALL ON melogin.* TO user@localhost IDENTIFIED BY "pass";
 
-USE melogin;
+-- CREATE DATABASE IF NOT EXISTS mafd16;
+-- GRANT ALL ON mafd16.* TO user@localhost IDENTIFIED BY "pass";
+
+-- USE melogin;
+USE mafd16;
 
 
 -- Ensure UTF8 as chacrter encoding within connection.
@@ -26,6 +30,13 @@ CREATE TABLE `users`
   `interest` VARCHAR(100),
   `admin` int DEFAULT 0
 ) ENGINE INNODB CHARACTER SET utf8 COLLATE utf8_swedish_ci;
+
+
+
+--
+-- Create index for users.name
+--
+CREATE INDEX index_name ON users(name);
 
 
 

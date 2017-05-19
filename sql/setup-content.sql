@@ -34,6 +34,18 @@ CREATE TABLE `content`
 
 ) ENGINE INNODB CHARACTER SET utf8 COLLATE utf8_swedish_ci;
 
+
+
+--
+-- Create index for content.type and content.deleted
+--
+CREATE INDEX index_type ON content(type);
+
+CREATE INDEX index_deleted ON content(deleted);
+
+
+
+
 /*
 INSERT INTO `content` (`path`, `slug`, `type`, `title`, `data`, `filter`) VALUES
     ("hem", null, "page", "Hem", "Detta är min hemsida. Den är skriven i [url=http://en.wikipedia.org/wiki/BBCode]bbcode[/url] vilket innebär att man kan formattera texten till [b]bold[/b] och [i]kursiv stil[/i] samt hantera länkar.\n\nDessutom finns ett filter 'nl2br' som lägger in <br>-element istället för \\n, det är smidigt, man kan skriva texten precis som man tänker sig att den skall visas, med radbrytningar.", "bbcode,nl2br"),

@@ -26,6 +26,16 @@ CREATE TABLE `users`
   `interest` VARCHAR(100)
 ) ENGINE INNODB CHARACTER SET utf8 COLLATE utf8_swedish_ci;
 
+
+
+--
+-- Create index for users.name
+--
+CREATE INDEX index_name ON users(username);
+
+
+
+
 /*
 DELETE FROM `movie`;
 INSERT INTO `movie` (`title`, `year`, `image`) VALUES
