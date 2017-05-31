@@ -331,16 +331,91 @@ PHPUnit_Framework_TestCase not found'. Fick lägga till
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <h2>Kmom10</h2>
-<p>Text</p>
+<p>Då var ännu en kurs till ända. Jag har byggt en websida som i sin webshop säljer
+pennor. Företaget, som ligger i Örebro, hette Närke pennor. Efter en satsning på den
+internationella marknaden heter man numera Narke pens. Därmed så är även all text
+på hemsidan på engelska.</p>
+
+<h4>1. För varje krav jag implementerat</h4>
+
+<h4>Krav 1: Struktur och innehåll</h4>
+<p>Webplatsen består av följande sidor. Home, med en enklare välkomsttext. Products,
+där produkterna visas. News, en nyhetsblogg. About, kort om företaget, och Profile,
+där kunder och administratörer kan logga in för att få tillgång till ytterligare
+funktionalitet. Om en administratör är inloggad så finns det på Profile-sidan
+länk till att administrera innehåll på webplatsen (Admin content). Där kan man
+skapa helt nytt innehåll, eller redigera/radera de poster som finns i listan.
+Poster av typen 'post' visas som ett inlägg på News-sidan. Poster av typen
+'about' visas på About-sidan, och poster av typen 'footer' visas i footern.
+Footern och headern är såklart gemensam för alla sidor. Tillbaka på Profile-sidan
+så hittar administratören även en länk till att hantera de produkter som visas i
+webshopen (Admin products). Där finns det två listor. Först listan med produkterna,
+där man kan redigera och radera. Det finns även en länk till att lägga till nya
+produkter. Sen listan med lagerhyllorna. Där kopplar man en befintlig produkt
+till en hylla i lagret, och anger antalet som finns av produkten. Produkten syns
+i webshopen först efter att den är skapad och har fått en hylla i lagret.</p>
+
+<p>När det gäller enhetstesterna så skrev jag några testfall för filen function.php
+som ligger i src/Database. Dokumentation är gjord med phpdoc. Sql-koden och
+er-diagrammet ligger i mappen sql. </p>
+
+<h4>Krav 2: Skapa kundkonto</h4>
+<p>Kunder som besöker webplatsen kan gå till Profile-fliken för att logga in
+eller registrera sig (skapa konto). Väl inloggade kan dom från Profile-fliken
+även logga ut, byta lösenord och redigera detaljer om sitt konto. Kunder kan inte
+redigera övriga delar, som administratörer enligt ovan kan redigera. När kunderna
+är inloggade så har dom också fått köp-knappar (add to cart), vid produkterna i
+Products-fliken.</p>
+
+<p>Det finns två förskapade konton, admin/admin och doe/doe. Inloggade administratörer
+hittar under Profile-fliken länken 'Admin users'. Där kan administratören utföra
+crud-operationer på alla användare, kunder som administratörer. </p>
+
+<h4>Krav 3: Sida - Produkter</h4>
+<p>I lagret finns det 12 produkter (pennor) i tre olika kategorier. På Products-sidan
+visas produkterna med namn, kategori, bild, text, pris och antal. Är kunden inloggad
+så visas även en köpknapp. Längst upp på Products-sidan finns det länkar för att
+sortera, och visa olika antal produkter per sida. Där finns även en sök-ruta. Längst
+ner på sidan finns det länkar för paginering. Om kunden är inloggad och trycker på
+köp-knappen för en produkt, så läggs produkten i varukorgen. Kunden kan därefter
+handla fler produkter, eller följa länken längst upp på Products-sidan till sin
+varukorg (shopping cart). I varukorgen visas de produkter som lagts till. Har man
+köpt två likadana produkter, så får dom ändå en rad var. Här kan man ta bort
+produkter från varukorgen, och även se det totala priset. Varukorgen är implementerad
+i sql-databasen. Längst ner finns en order-knapp. Trycker kunden på den så skapas
+ordern, och order-detaljerna visas för kunden. Då uppdateras även lagret med
+rätt antal produkter. Kunden kan sen gå till sin Profile-sida, och där välja
+'Order history', för att se alla sina tidigare ordrar. Kunden kan även gå in på
+varje order för att se order-detaljerna. </p>
+
+<h4>2. Om projektet</h4>
+<p>Detta projektet har gått över förväntan fort. Kanske blir så när man har
+begränsat med tid också. I stort så har jag använt mig av de lösningar som vi
+har jobbat med under kursens gång. Jag har fått justera lite i sql-databasen
+för att det skulle passa med hemsidan, och de krav som den ställde. En sak som
+blev lite redundant är att jag har users som inloggade användare av hemsidan, och
+customers som köpare i webshopen. Dessa kopplas sen ihop av en tredje tabell,
+user2customer. Här hade jag kunnat använda samma tabell för inloggning/köp, men
+det hade krävt lite mer ombyggnation av koden. Hade ett problem där admin
+tappade sin admin-status när admin redigerade sig själv via den redigerings-sidan
+som vanliga kunder använder. Det var dock lättlöst. I övrigt så har allt flutit
+på väldigt bra, och utan några egentliga svårigheter. Jag tycker projektet har
+varit en bra examination på kursen. Det blev ganska mycket som skulle göras i
+projektet, men det var inga större problem, då allt tidigare hade gjorts under
+kursens gång, och vi hade mycket färdig kod. Alternativet hade väl varit ett
+projekt med mindre delar/uppgifter och att man fick skriva mer kod från scratch.</p>
+
+
+<h4>3. Om kursen</h4>
+<p>Jag har haft svårt att se om kursen handlar om objekt-orienterad programmering
+i php, eller om den handlar om ramverk i php, eller om det kanske faller in
+under samma kategori? Hur som helst, så har jag gillat kursen. Artiklarna
+har hållt hög kvalitet. Föreläsningar och genomgångar har jag tyvärr inte sett
+mycket av den här läsperioden. Som förbättringsförslag skulle jag vilja se en mer
+teoretisk framläggning av ramverk, och vad som kan tänkas ingå i ett sånt. Hur
+funkar de ingående delarna? Kan tänka mig att det kanske är svårt, det finns ju
+massor av ramverk, och alla ser dom väl olika ut. Men vissa delar bör dom ju ha
+gemensamt. Kanske kan vara något för framtida läshänvisningar. Jag är dock
+mycket nöjd med kursen. Det har varit kul att skriva php igen. Jag ger kursen
+betyget 8 av 10.</p>
